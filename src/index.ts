@@ -5,13 +5,8 @@ export class PackageWorkerAPI {
 	private worker: Worker;
 
 	constructor() {
-		/* DO NOT USE { type: "module" } WHEN MAKING WORKER EVEN THOUGH THE WORKER IS TECHNICALLY A MODULE WORKER!
-		 * If you do the NextJS project has errors like "SyntaxError: Unexpected token 'export'" and doesn't work.
-		 * Apparently some NextJS/webpack magic is happening to allow module workers even when unspecified
-		 * or in browsers that aren't supposed to support them like FireFox and FireFox for Android. */
-
-		// this.worker = new Worker(new URL("./worker", import.meta.url), { type: "module" }); // NO!!
-		this.worker = new Worker(new URL("./worker", import.meta.url)); // Yes!
+		// this.worker = new Worker(new URL("./worker", import.meta.url), { type: "module" }); // No?
+		this.worker = new Worker(new URL("./worker", import.meta.url)); // Yes?
 		console.log("PackageWorkerAPI constructed");
 	}
 
