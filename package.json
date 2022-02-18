@@ -1,0 +1,34 @@
+{
+	"name": "@discretegames/nextjs-ts-webworker-package",
+	"description": "NPM package for testing TypeScript web workers in NextJS.",
+	"version": "0.0.1",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"homepage": "https://github.com/discretegames/nextjs-ts-webworker-package",
+	"repository": "github:discretegames/nextjs-ts-webworker-package",
+	"scripts": {
+		"pp": "npm version patch && npm publish",
+		"build": "tsc",
+		"watch": "tsc -w",
+		"prepare": "npm run build",
+		"prepublishOnly": "",
+		"preversion": "",
+		"version": "git add -A src",
+		"postversion": "git push && git push --tags"
+	},
+	"files": [
+		"lib/index.js",
+		"lib/index.d.ts"
+	],
+	"keywords": [
+		"typescript",
+		"web worker",
+		"module worker",
+		"nextjs"
+	],
+	"author": "discretegames <discretizedgames@gmail.com> (https://github.com/discretegames)",
+	"license": "MIT",
+	"devDependencies": {
+		"typescript": "^4.5.5"
+	}
+}

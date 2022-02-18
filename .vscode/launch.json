@@ -1,0 +1,10 @@
+{
+	"configurations": [
+		{
+			"name": "F5 Anything: npm run watch",
+			"type": "f5anything",
+			"request": "launch",
+			"command": "npm run watch",
+		}
+	]
+}
