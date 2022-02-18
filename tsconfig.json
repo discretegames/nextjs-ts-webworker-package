@@ -1,7 +1,8 @@
 {
 	"compilerOptions": {
-		"target": "es5",
-		"module": "commonjs",
+		"target": "es2015",
+		// "module": "commonjs", // Can't use import.meta.url with commonjs
+		"module": "esnext",
 		"declaration": true,
 		"outDir": "./lib",
 		"strict": true
