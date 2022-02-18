@@ -5,8 +5,8 @@ export class PackageWorkerAPI {
 	private worker: Worker;
 
 	constructor() {
-		// this.worker = new Worker(new URL("./worker", import.meta.url), { type: "module" }); // No?
-		this.worker = new Worker(new URL("./worker", import.meta.url)); // Yes?
+		this.worker = new Worker(new URL("./worker", import.meta.url), { type: "module" }); // No?
+		// this.worker = new Worker(new URL("./worker", import.meta.url)); // Yes?
 		console.log("PackageWorkerAPI constructed");
 	}
 
@@ -20,8 +20,8 @@ export class PackageWorkerAPI {
 			};
 
 			// Following 2 lines are equivalent, right?
-			this.worker.onmessage = onMessage;
-			// this.worker.addEventListener("message", onMessage);
+			// this.worker.onmessage = onMessage;
+			this.worker.addEventListener("message", onMessage);
 
 			this.worker.postMessage(n);
 		});

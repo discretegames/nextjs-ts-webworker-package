@@ -11,5 +11,5 @@ const caller = (event: MessageEvent) => {
 };
 
 // Following 2 lines are equivalent, right?
-onmessage = caller;
-// addEventListener("message", caller);
+// onmessage = caller;
+addEventListener("message", caller);
