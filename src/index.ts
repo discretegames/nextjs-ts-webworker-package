@@ -5,8 +5,8 @@ export class PackageWorkerAPI {
 	private worker: Worker;
 
 	constructor() {
-		// this.worker = new Worker(new URL("./worker.worker", import.meta.url), { type: "module" });
-		this.worker = new Worker(new URL("./worker", import.meta.url)); // type: module not needed?
+		this.worker = new Worker(new URL("./worker", import.meta.url), { type: "module" });
+		// this.worker = new Worker(new URL("./worker", import.meta.url)); // type: module not needed?
 		console.log("PackageWorkerAPI constructed");
 	}
 
