@@ -1,7 +1,7 @@
 {
 	"name": "@discretegames/nextjs-ts-webworker-package",
 	"description": "NPM package for testing TypeScript web workers in NextJS.",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"homepage": "https://github.com/discretegames/nextjs-ts-webworker-package",
