@@ -5,8 +5,9 @@ export class PackageWorkerAPI {
 	private worker: Worker;
 
 	constructor() {
-		this.worker = new Worker(new URL("./worker", import.meta.url), { type: "module" }); // No?
-		// this.worker = new Worker(new URL("./worker", import.meta.url)); // Yes?
+		// The { type: "module" } doesn't seem to make a difference, even in Firefox
+		// this.worker = new Worker(new URL("./worker", import.meta.url), { type: "module" }); // No?
+		this.worker = new Worker(new URL("./worker", import.meta.url)); // Yes?
 		console.log("PackageWorkerAPI constructed");
 	}
 
@@ -19,9 +20,9 @@ export class PackageWorkerAPI {
 				resolve("Package Worker API: " + event.data);
 			};
 
-			// Following 2 lines are equivalent, right?
-			// this.worker.onmessage = onMessage;
-			this.worker.addEventListener("message", onMessage);
+			// Following 2 lines are equivalent, right? Both work.
+			this.worker.onmessage = onMessage;
+			// this.worker.addEventListener("message", onMessage);
 
 			this.worker.postMessage(n);
 		});

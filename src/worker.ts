@@ -10,6 +10,6 @@ const caller = (event: MessageEvent) => {
 	postMessage(doesWork(event.data));
 };
 
-// Following 2 lines are equivalent, right?
-// onmessage = caller;
-addEventListener("message", caller);
+// Following 2 lines are equivalent, right? Both work.
+onmessage = caller;
+// addEventListener("message", caller);
